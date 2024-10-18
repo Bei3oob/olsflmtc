@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    // Allocate memory for the block of 5 digits
+    int *fiveDigits = (int *)malloc(sizeof(int) * 5);
+    if (fiveDigits == NULL) {
+        printf("Memory allocation failed for five digits.\n");
+        return 1;
+    }
+
+    // Allocate memory for the block of 4 digits
+    int *fourDigits = (int *)malloc(sizeof(int) * 4);
+    if (fourDigits == NULL) {
+        printf("Memory allocation failed for four digits.\n");
+        free(fiveDigits); // Free previously allocated memory
+        return 1;
+    }
+
+    // Leave the allocated arrays uninitialized to allow manual input of values
+    // fiveDigits[0] to fiveDigits[4] can be set manually to any desired values
+    // fourDigits[0] to fourDigits[3] can be set manually to any desired values
+
+    // Example manual assignment (to be modified with desired values)
+    fiveDigits[0] = 18924;
+    fiveDigits[1] = 21924;
+    fiveDigits[2] = 22924;
+    fiveDigits[3] = 27924;
+    fiveDigits[4] = 28924;
+    fiveDigits[5] = 28924;
+    fiveDigits[6] = 29924;
+    fiveDigits[7] = 30924;
+    fiveDigits[8] = 01024;
+    fiveDigits[9] = 03024;
+    fiveDigits[10] = 09024;
+    fiveDigits[11] = 10024;
+    fiveDigits[12] = 11024;
+    fiveDigits[13] = 12024;
+    fiveDigits[14] = 14024;
+    fiveDigits[15] = 15024;
+    fiveDigits[16] = 16024;
+    fiveDigits[17] = 17024;
+
+    fourDigits[0] = 1105;
+    fourDigits[1] = 2348;
+    fourDigits[2] = 0153;
+    fourDigits[3] = 2248;
+    fourDigits[4] = 0119;
+    fourDigits[5] = 1532;
+    fourDigits[6] = 0100;
+    fourDigits[7] = 0043;
+    fourDigits[8] = 2331;
+    fourDigits[9] = 2316;
+    fourDigits[10] = 2344;
+    fourDigits[11] = 0044;
+    fourDigits[12] = 2244;
+    fourDigits[13] = 2226;
+    fourDigits[14] = 0442;
+    fourDigits[15] = 2227;
+    fourDigits[16] = 2354;
+    fourDigits[17] = 0138;
+
+
+//18
+
+    // Display the values in a table format
+    printf("Table of Values:\n");
+    printf("Index   Five-Digits   Four-Digits\n");
+    printf("---------------------------------\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%-7d %-13d", i + 1, fiveDigits[i]);
+        if (i < 4) {
+            printf("%d", fourDigits[i]);
+        }
+        printf("\n");
+    }
+
+    // Free the allocated memory
+    free(fiveDigits);
+    free(fourDigits);
+
+    return 0;
+}
